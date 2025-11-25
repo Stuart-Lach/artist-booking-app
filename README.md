@@ -1,30 +1,60 @@
-# ArtistBook – Influencer Booking Demo
+# ArtistBook – Influencer Booking & Dashboard Demo
 
-Full-stack demo app for managing influencer bookings.
+Live demo: https://artist-booking-app-eight.vercel.app  
+API: https://artist-booking-app-o80p.onrender.com
 
-## Stack
+ArtistBook is a full-stack demo app for managing influencer and artist bookings.
+It’s built as a portfolio piece to showcase production-style booking flows, dashboards,
+and CRUD APIs.
 
-- React + Vite + Tailwind CSS
-- Node.js + Express
-- Prisma + SQLite
+---
 
 ## Features
 
-- Marketing landing page
-- Booking form (client → creates booking)
-- Creator dashboard with live booking table
+- **Marketing Landing Page**
+  - Clean, responsive hero section
+  - Clear value proposition for creators/managers
+  - CTA to start a booking
 
-## Running locally
+- **Booking Request Flow**
+  - Public form for brands/clients
+  - Required fields: name, email, project type, date, details
+  - Validation and user-friendly error states
+  - Sends data to a real backend API
+
+- **Creator Dashboard**
+  - Overview stats (total, pending, accepted, declined)
+  - Live table of incoming bookings from the database
+  - Status badges with clear visual states
+
+---
+
+## Tech Stack
+
+**Frontend**
+- React (Vite)
+- React Router
+- Tailwind CSS
+
+**Backend**
+- Node.js + Express
+- Prisma ORM
+- SQLite (via Prisma) on Render
+
+**Infra**
+- Frontend deployed on Vercel
+- Backend API deployed on Render
+
+---
+
+## Running Locally
 
 ### Backend
+
+```bash
 cd backend
 npm install
+npx prisma generate
+npx prisma migrate dev --name init
 npm run dev
-
-### Frontend
-cd frontend
-npm install
-npm run dev
-
-Frontend: http://localhost:5173  
-Backend API: http://localhost:4000
+# http://localhost:4000
