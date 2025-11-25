@@ -1,6 +1,7 @@
 // src/pages/BookingPage.jsx
 import { useState } from "react";
 import { PrimaryButton } from "../components/Buttons";
+import { API_BASE_URL } from "../config";
 
 function BookingPage() {
   const [form, setForm] = useState({
@@ -42,7 +43,7 @@ function BookingPage() {
     setStatus({ submitting: true, success: false, error: "" });
 
     try {
-      const res = await fetch("http://localhost:4000/bookings", {
+      const res = await fetch(`${API_BASE_URL}/bookings`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

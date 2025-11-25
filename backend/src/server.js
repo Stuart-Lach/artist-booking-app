@@ -11,7 +11,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Vite dev server
+    origin: [
+      "http://localhost:5173",
+      "https://artist-booking-app-eight.vercel.app",
+    ],
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
   })

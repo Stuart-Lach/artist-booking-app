@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 function ProfilePage() {
   const [bookings, setBookings] = useState([]);
@@ -11,7 +12,7 @@ function ProfilePage() {
         setLoading(true);
         setError("");
 
-        const res = await fetch("http://localhost:4000/bookings");
+        const res = await fetch(`${API_BASE_URL}/bookings`);
 
         if (!res.ok) {
           const body = await res.json().catch(() => ({}));
