@@ -1,25 +1,38 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import BookingPage from "./pages/BookingPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-slate-950 text-slate-100">
         <header className="border-b border-slate-800 px-6 py-4 flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold">
+          <Link to="/" className="text-xl font-bold tracking-tight">
             ArtistBook
           </Link>
-          <nav className="flex gap-4 text-sm">
-            <Link to="/profile" className="hover:text-indigo-400">Profile</Link>
-            <Link to="/book" className="hover:text-indigo-400">Book</Link>
-            <Link to="/login" className="hover:text-indigo-400">Login</Link>
+          <nav className="flex gap-4 text-xs sm:text-sm">
+            <Link to="/profile" className="hover:text-indigo-400">
+              Profile
+            </Link>
+            <Link to="/book" className="hover:text-indigo-400">
+              Book
+            </Link>
+            <Link to="/login" className="hover:text-indigo-400">
+              Login
+            </Link>
           </nav>
         </header>
-        <main className="p-6">
+
+        <main>
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
             <Route path="/book" element={<BookingPage />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route
+              path="/login"
+              element={<div className="p-6">Login Page Placeholder</div>}
+            />
           </Routes>
         </main>
       </div>
@@ -27,16 +40,6 @@ function App() {
   );
 }
 
-// Temporary placeholder pages (Copilot can flesh these out later)
-function LandingPage() {
-  return <div>Landing Page Placeholder</div>;
-}
-function ProfilePage() {
-  return <div>Profile Page Placeholder</div>;
-}
-function BookingPage() {
-  return <div>Booking Form Placeholder</div>;
-}
 function LoginPage() {
   return <div>Login Page Placeholder</div>;
 }
