@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add custom styles under here */
+body {
+  @apply bg-slate-950 text-slate-100;
+}
